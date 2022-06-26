@@ -9,7 +9,7 @@
 	{{ range $index, $value := $list }}
 		<a href="{{ .Permalink }}">
 			{{ range .Params.photos }}
-				<img src="https://micro.blog/photos/600x/{{ . }}" width="500" style="border-radius: 0px; max-width: 100%; height: auto;" class="photos-grid-item" loading="lazy" />
+				<img src="https://micro.blog/photos/600x/{{ . }}" width="500" style="border-radius: 0px; max-width: 80%; height: auto;" class="photos-grid-item" loading="lazy" />
 			{{ end }}
 		</a>
 	{{ end }}
