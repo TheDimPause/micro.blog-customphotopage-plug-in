@@ -13,7 +13,7 @@
 		{{- $url := .Permalink -}}
 		{{ range .Params.photos }}
 			<a href="{{ $url }}">
-			<img src="https://micro.blog/photos/300x/{{ . }}" width="195" style="display: inline-block; border-radius: 0px; max-width: 100%; height: auto;" class="photos-grid-item" loading="lazy" />
+			<img src="https://micro.blog/photos/300x/{{ . }}" width="195" style="display: inline-block; border-radius: 0px; max-width: 100%; object-fit: cover;" class="photos-grid-item" loading="lazy" />
 			</a>
 		{{ end }}
 	{{ end }}
