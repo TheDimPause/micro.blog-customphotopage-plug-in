@@ -1,22 +1,23 @@
 {{ define "main" }}
 
-<p>A summary of blog photographs. Clicking on any image here will take you to a higher resolution version in its original post.</p>
+<p>A summary of blog photographs. Clicking on any image here will take you to the higher resolution version in its original post with descriptions.</p>
 
 <p>📸 I also share a lot of photographs at <a href="https://thedimpause.smugmug.com">thedimpause.photos</a>, which is a SmugMug site.</p>
 
-<div class="photos-grid-container" style="display: grid; grid-column-gap: 5px; grid-row-gap: 5px; grid-template-columns: 100%;">
+<div class="photos-grid-container" style="display: grid; grid-column-gap: 5px; grid-row-gap: 5px; grid-template-columns: 25% 25% 25% 25%;">
 
 	{{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
 	{{- $len := (len $list) -}}
+
 	{{ range $index, $value := $list }}
-		<a href="{{ .Permalink }}">
-			{{ range .Params.photos }}
-				<img src="https://micro.blog/photos/600x/{{ . }}" width="500" style="border-radius: 0px; max-width: 100%; height: auto;" class="photos-grid-item" loading="lazy" />
-			{{ end }}
-		</a>
+		{{- $url := .Permalink -}}
+		{{ range .Params.photos }}
+			<a href="{{ $url }}">
+			<img src="https://micro.blog/photos/300x/{{ . }}" width="195" style="display: inline-block; border-radius: 0px; max-width: 100%; height: auto;" class="photos-grid-item" loading="lazy" />
+			</a>
+		{{ end }}
 	{{ end }}
 
 </div>
 
 {{ end }}
-
