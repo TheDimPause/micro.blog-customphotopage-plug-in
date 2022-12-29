@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<p>A summary of blog photographs. Clicking on any image here will take you to the higher resolution version in its original post with descriptions.</p>
+<p>A summary of blog images. Clicking on any image here will take you to the higher resolution version in its original post with descriptions.</p>
 
 <p>📸 I also share a lot of photographs at <a href="https://thedimpause.photos">thedimpause.photos</a>.</p>
 
@@ -12,11 +12,9 @@
 	{{ range $index, $value := $list }}
 		{{- $url := .Permalink -}}
 		{{ range .Params.photos }}
-			{{ if  in . "dim" }}
 			<a href="{{ $url }}">
 			<img src="https://micro.blog/photos/300x/{{ . }}" class="photos-grid-item" loading="lazy" />
 			</a>
-			{{ end }}
 		{{ end }}
 	{{ end }}
 
