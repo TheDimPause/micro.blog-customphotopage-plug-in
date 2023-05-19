@@ -2,7 +2,7 @@
 
 <p>A summary of blog images. Clicking on any image here will take you to the higher resolution version in its original post with descriptions.</p>
 
-<p>📸 I also share photographs at <a href="https://thedimpause.photos">thedimpause.photos</a>.</p>
+<p>📸 I also share full resolution versions of these - and more - photographs at <a href="https://thedimpause.photos">thedimpause.photos</a></p>
 
 <div class="photos-grid-container" >
 
@@ -10,13 +10,16 @@
 	{{- $len := (len $list) -}}
 
 	{{ range $index, $value := $list }}
+		{{ if not (in .Content "ltrbxd") }}
 		{{- $url := .Permalink -}}
 		{{ range .Params.photos }}
 			<a href="{{ $url }}">
 			<img src="https://micro.blog/photos/300x/{{ . }}" class="photos-grid-item" loading="lazy" />
 			</a>
 		{{ end }}
+		{{ end }}
 	{{ end }}
+	
 
 </div>
 
