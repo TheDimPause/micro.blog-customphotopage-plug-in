@@ -6,12 +6,12 @@
 
 <div class="photos-grid-container" >
 
-	{{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
-	{{- $len := (len $list) -}}
+	{{ $list := where .Site.Pages ".Params.photos" "!=" nil }}
+	{{ $len := (len $list) }}
 
 	{{ range $index, $value := $list }}
 		{{ if not (in .Content "ltrbxd") }}
-		{{- $url := .Permalink -}}
+		{{ $url := .Permalink }}
 		{{ range .Params.photos }}
 			<a href="{{ $url }}">
 			<img src="https://micro.blog/photos/300x/{{ . }}" class="photos-grid-item" loading="lazy" />
