@@ -8,7 +8,7 @@
 
 	{{ $list := where .Site.Pages ".Params.photos" "!=" nil }}
 
-	{{ range $index, $value := $list }}
+	{{ range $list }}
 		{{ if not (in .Content "ltrbxd") }}
 		{{ $url := .Permalink }}
 		{{ range .Params.photos }}
