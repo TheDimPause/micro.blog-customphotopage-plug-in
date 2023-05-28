@@ -7,7 +7,6 @@
 <div class="photos-grid-container" >
 
 	{{ $list := where .Site.Pages ".Params.photos" "!=" nil }}
-	{{ $len := (len $list) }}
 
 	{{ range $index, $value := $list }}
 		{{ if not (in .Content "ltrbxd") }}
